@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v == mViewBeersButton) {
             String name = mEnterNameEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, BeerActivity.class);
+             Toast.makeText(MainActivity.this, "Welcome " + name, Toast.LENGTH_LONG).show();
             intent.putExtra("name", name);
             startActivity(intent);
         }
