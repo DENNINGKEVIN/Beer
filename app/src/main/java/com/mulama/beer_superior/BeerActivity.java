@@ -65,10 +65,10 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
         BeerModel beerModel1=new BeerModel("https://www.bigbeaverdiaries.com/wp-content/uploads/2016/02/1220063-1024x768.jpg","Balozi");
         BeerModel beerModel2=new BeerModel("https://pbs.twimg.com/media/Cpz94CjWIAAc5Ro.jpg","Senator");
         BeerModel beerModel3=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
-        BeerModel beerModel4=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
-        BeerModel beerModel5=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
-        BeerModel beerModel6=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
-        BeerModel beerModel7=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
+        BeerModel beerModel4=new BeerModel("https://www.oaksncorks.com/wp-content/uploads/2017/09/blog-covers-21-1024x614.png","Tusker");
+        BeerModel beerModel5=new BeerModel("https://d3czfiwbzom72b.cloudfront.net/wp-content/uploads/2018/10/REDDS-APPLE-ALE-6PK-12OZ-Beer.png","Redds");
+        BeerModel beerModel6=new BeerModel("https://images.squarespace-cdn.com/content/5bb894db16b640604a4d1ca9/1541494520185-XMB8WVT5XH5X8AH3WIHT/Castle.jpg?content-type=image%2Fjpeg","Castle");
+        BeerModel beerModel7=new BeerModel("https://packagingeurope.com/downloads/6809/download/Carlsberg-GFB-3.jpg?cb=3c6c3ff5313a29572b53e5b4e3d32a41&w=640","Carlsberg");
 
 
 
