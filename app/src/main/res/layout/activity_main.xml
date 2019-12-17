@@ -9,12 +9,12 @@
     android:background="@android:color/darker_gray"
     >
 
-    <!--    <ImageView-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:id="@+id/imageView"-->
-    <!--        android:src="@drawable/beer1"-->
-    <!--        android:scaleType="centerCrop" />-->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView"
+            android:src="@drawable/beer1"
+            android:scaleType="centerCrop" />
 
     <Button
         android:layout_width="match_parent"
