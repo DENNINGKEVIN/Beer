@@ -65,11 +65,22 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
         BeerModel beerModel1=new BeerModel("https://www.bigbeaverdiaries.com/wp-content/uploads/2016/02/1220063-1024x768.jpg","Balozi");
         BeerModel beerModel2=new BeerModel("https://pbs.twimg.com/media/Cpz94CjWIAAc5Ro.jpg","Senator");
         BeerModel beerModel3=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
+        BeerModel beerModel4=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
+        BeerModel beerModel5=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
+        BeerModel beerModel6=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
+        BeerModel beerModel7=new BeerModel("https://cdn.mpasho.co.ke/wp-content/uploads/2018/06/White-Cap.jpg","WhiteCap");
+
+
+
 
         beerModelArrayList.add(beerModel);
         beerModelArrayList.add(beerModel1);
         beerModelArrayList.add(beerModel2);
         beerModelArrayList.add(beerModel3);
+        beerModelArrayList.add(beerModel4);
+        beerModelArrayList.add(beerModel5);
+        beerModelArrayList.add(beerModel6);
+        beerModelArrayList.add(beerModel7);
     }
 
     @Override
