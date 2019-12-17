@@ -33,12 +33,15 @@
         android:layout_below="@id/addBeerButton"
         />
 
-    <ListView
-        android:layout_width="match_parent"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/beerListView"
+        android:id="@+id/beerRecyclerView"
+        android:layout_centerInParent="true"
         android:layout_below="@+id/beerTextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+      />
+
+
+
 
 </RelativeLayout>
