@@ -6,13 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ContributeActivity extends AppCompatActivity implements View.OnClickListener{
 
+    @BindView(R.id.submitButton) Button mSubmitButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contribute);
+        ButterKnife.bind(this);
+
+        mSubmitButton.setOnClickListener(this);
     }
 
     @Override
