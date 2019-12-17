@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,6 +28,7 @@ public class ContributeActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         Intent intent = new Intent(ContributeActivity.this, BeerActivity.class);
         startActivity(intent);
+        Toast.makeText(ContributeActivity.this, "Beer Submited!", Toast.LENGTH_LONG).show();
 
     }
 }
