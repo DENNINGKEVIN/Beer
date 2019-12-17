@@ -20,7 +20,8 @@
                 android:value="com.mulama.beer_superior.MainActivity">
             </meta-data>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppNoTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
