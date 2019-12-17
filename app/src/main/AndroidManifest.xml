@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ContributeActivity"></activity>
+        <activity android:name=".ContributeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mulama.beer_superior.BeerActivity"></meta-data>
+        </activity>
         <activity android:name=".BeerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
