@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UntappedBeerSearchResponse {
+public class UntappedBeerInfoSearchResponse {
 
     @SerializedName("meta")
     @Expose
@@ -21,7 +21,7 @@ public class UntappedBeerSearchResponse {
      * No args constructor for use in serialization
      * 
      */
-    public UntappedBeerSearchResponse() {
+    public UntappedBeerInfoSearchResponse() {
     }
 
     /**
@@ -30,7 +30,7 @@ public class UntappedBeerSearchResponse {
      * @param response
      * @param notifications
      */
-    public UntappedBeerSearchResponse(Meta meta, List<Object> notifications, Response response) {
+    public UntappedBeerInfoSearchResponse(Meta meta, List<Object> notifications, Response response) {
         super();
         this.meta = meta;
         this.notifications = notifications;
