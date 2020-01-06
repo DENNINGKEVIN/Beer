@@ -3,9 +3,6 @@ package com.mulama.beer_superior.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.mulama.beer_superior.Brewery;
-import com.mulama.beer_superior.Media;
-import com.mulama.beer_superior.Stats;
 
 public class Beer {
 
