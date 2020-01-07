@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mulama.beer_superior.R;
-import com.mulama.beer_superior.models.BeerModel;
+import com.mulama.beer_superior.models.Beer;
 import com.mulama.beer_superior.viewholders.BeerViewHolder;
 import com.squareup.picasso.Picasso;
 
@@ -17,11 +17,11 @@ import java.util.ArrayList;
 
 public class BeerAdapter extends RecyclerView.Adapter<BeerViewHolder> {
     Context mContext;
-    ArrayList<BeerModel> beerModelArrayList;
+    ArrayList<Beer> beerArrayList;
 
-    public BeerAdapter(Context mContext, ArrayList<BeerModel> beerModelArrayList) {
+    public BeerAdapter(Context mContext, ArrayList<Beer> beerModelArrayList) {
         this.mContext = mContext;
-        this.beerModelArrayList = beerModelArrayList;
+        this.beerArrayList = beerModelArrayList;
     }
 
     @NonNull
@@ -34,16 +34,16 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull BeerViewHolder holder, int position) {
-        BeerModel beerModel=beerModelArrayList.get(position);
+        Beer beer=beerArrayList.get(position);
         Picasso.get()
-                .load(beerModel.getPombeImage())
+                .load(beer.getBeerLabel())
                 .into(holder.pombeImage);
-        holder.pombeText.setText(beerModel.getPombeText());
+        holder.pombeText.setText(beer.getBeerName());
 
     }
 
     @Override
     public int getItemCount() {
-        return beerModelArrayList.size();
+        return beerArrayList.size();
     }
 }

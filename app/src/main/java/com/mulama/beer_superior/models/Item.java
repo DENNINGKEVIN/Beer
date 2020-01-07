@@ -6,18 +6,21 @@ import com.google.gson.annotations.SerializedName;
 
 public class Item {
 
-    @SerializedName("photo_id")
+    @SerializedName("checkin_count")
     @Expose
-    private Integer photoId;
-    @SerializedName("photo")
+    private Integer checkinCount;
+    @SerializedName("have_had")
     @Expose
-    private Photo photo;
-    @SerializedName("created_at")
+    private Boolean haveHad;
+    @SerializedName("your_count")
     @Expose
-    private String createdAt;
-    @SerializedName("checkin_id")
+    private Integer yourCount;
+    @SerializedName("beer")
     @Expose
-    private Integer checkinId;
+    private Beer beer;
+    @SerializedName("brewery")
+    @Expose
+    private Brewery brewery;
 
     /**
      * No args constructor for use in serialization
@@ -28,49 +31,59 @@ public class Item {
 
     /**
      * 
-     * @param createdAt
-     * @param checkinId
-     * @param photoId
-     * @param photo
+     * @param checkinCount
+     * @param brewery
+     * @param yourCount
+     * @param beer
+     * @param haveHad
      */
-    public Item(Integer photoId, Photo photo, String createdAt, Integer checkinId) {
+    public Item(Integer checkinCount, Boolean haveHad, Integer yourCount, Beer beer, Brewery brewery) {
         super();
-        this.photoId = photoId;
-        this.photo = photo;
-        this.createdAt = createdAt;
-        this.checkinId = checkinId;
+        this.checkinCount = checkinCount;
+        this.haveHad = haveHad;
+        this.yourCount = yourCount;
+        this.beer = beer;
+        this.brewery = brewery;
     }
 
-    public Integer getPhotoId() {
-        return photoId;
+    public Integer getCheckinCount() {
+        return checkinCount;
     }
 
-    public void setPhotoId(Integer photoId) {
-        this.photoId = photoId;
+    public void setCheckinCount(Integer checkinCount) {
+        this.checkinCount = checkinCount;
     }
 
-    public Photo getPhoto() {
-        return photo;
+    public Boolean getHaveHad() {
+        return haveHad;
     }
 
-    public void setPhoto(Photo photo) {
-        this.photo = photo;
+    public void setHaveHad(Boolean haveHad) {
+        this.haveHad = haveHad;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public Integer getYourCount() {
+        return yourCount;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
+    public void setYourCount(Integer yourCount) {
+        this.yourCount = yourCount;
     }
 
-    public Integer getCheckinId() {
-        return checkinId;
+    public Beer getBeer() {
+        return beer;
     }
 
-    public void setCheckinId(Integer checkinId) {
-        this.checkinId = checkinId;
+    public void setBeer(Beer beer) {
+        this.beer = beer;
+    }
+
+    public Brewery getBrewery() {
+        return brewery;
+    }
+
+    public void setBrewery(Brewery brewery) {
+        this.brewery = brewery;
     }
 
 }

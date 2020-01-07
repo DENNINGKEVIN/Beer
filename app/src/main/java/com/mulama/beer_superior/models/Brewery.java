@@ -15,12 +15,12 @@ public class Brewery {
     @SerializedName("brewery_slug")
     @Expose
     private String brewerySlug;
-    @SerializedName("brewery_type")
-    @Expose
-    private String breweryType;
     @SerializedName("brewery_page_url")
     @Expose
     private String breweryPageUrl;
+    @SerializedName("brewery_type")
+    @Expose
+    private String breweryType;
     @SerializedName("brewery_label")
     @Expose
     private String breweryLabel;
@@ -33,6 +33,9 @@ public class Brewery {
     @SerializedName("location")
     @Expose
     private Location location;
+    @SerializedName("brewery_active")
+    @Expose
+    private Integer breweryActive;
 
     /**
      * No args constructor for use in serialization
@@ -49,21 +52,23 @@ public class Brewery {
      * @param countryName
      * @param breweryLabel
      * @param breweryName
+     * @param breweryActive
      * @param brewerySlug
-     * @param breweryType
      * @param breweryPageUrl
+     * @param breweryType
      */
-    public Brewery(Integer breweryId, String breweryName, String brewerySlug, String breweryType, String breweryPageUrl, String breweryLabel, String countryName, Contact contact, Location location) {
+    public Brewery(Integer breweryId, String breweryName, String brewerySlug, String breweryPageUrl, String breweryType, String breweryLabel, String countryName, Contact contact, Location location, Integer breweryActive) {
         super();
         this.breweryId = breweryId;
         this.breweryName = breweryName;
         this.brewerySlug = brewerySlug;
-        this.breweryType = breweryType;
         this.breweryPageUrl = breweryPageUrl;
+        this.breweryType = breweryType;
         this.breweryLabel = breweryLabel;
         this.countryName = countryName;
         this.contact = contact;
         this.location = location;
+        this.breweryActive = breweryActive;
     }
 
     public Integer getBreweryId() {
@@ -90,20 +95,20 @@ public class Brewery {
         this.brewerySlug = brewerySlug;
     }
 
-    public String getBreweryType() {
-        return breweryType;
-    }
-
-    public void setBreweryType(String breweryType) {
-        this.breweryType = breweryType;
-    }
-
     public String getBreweryPageUrl() {
         return breweryPageUrl;
     }
 
     public void setBreweryPageUrl(String breweryPageUrl) {
         this.breweryPageUrl = breweryPageUrl;
+    }
+
+    public String getBreweryType() {
+        return breweryType;
+    }
+
+    public void setBreweryType(String breweryType) {
+        this.breweryType = breweryType;
     }
 
     public String getBreweryLabel() {
@@ -136,6 +141,14 @@ public class Brewery {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public Integer getBreweryActive() {
+        return breweryActive;
+    }
+
+    public void setBreweryActive(Integer breweryActive) {
+        this.breweryActive = breweryActive;
     }
 
 }

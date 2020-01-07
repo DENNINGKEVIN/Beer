@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(v == mViewBeersButton) {
             String name = mEnterNameEditText.getText().toString();
             Intent intent = new Intent(MainActivity.this, BeerActivity.class);
-             Toast.makeText(MainActivity.this, "Welcome " + name, Toast.LENGTH_LONG).show();
+             Toast.makeText(MainActivity.this, "Welcome " , Toast.LENGTH_LONG).show();
             intent.putExtra("name", name);
             startActivity(intent);
         }

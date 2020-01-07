@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Media {
+public class Beers {
 
     @SerializedName("count")
     @Expose
@@ -18,7 +18,7 @@ public class Media {
      * No args constructor for use in serialization
      * 
      */
-    public Media() {
+    public Beers() {
     }
 
     /**
@@ -26,7 +26,7 @@ public class Media {
      * @param count
      * @param items
      */
-    public Media(Integer count, List<Item> items) {
+    public Beers(Integer count, List<Item> items) {
         super();
         this.count = count;
         this.items = items;

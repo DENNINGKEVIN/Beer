@@ -23,9 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    buildTypes.each {
-        it.buildConfigField 'String', 'UNTAPPED_API_KEY' , UntappedApiKey
-    }
+
 }
 
 dependencies {

@@ -12,6 +12,9 @@ public class Contact {
     @SerializedName("facebook")
     @Expose
     private String facebook;
+    @SerializedName("instagram")
+    @Expose
+    private String instagram;
     @SerializedName("url")
     @Expose
     private String url;
@@ -27,12 +30,14 @@ public class Contact {
      * 
      * @param twitter
      * @param facebook
+     * @param instagram
      * @param url
      */
-    public Contact(String twitter, String facebook, String url) {
+    public Contact(String twitter, String facebook, String instagram, String url) {
         super();
         this.twitter = twitter;
         this.facebook = facebook;
+        this.instagram = instagram;
         this.url = url;
     }
 
@@ -50,6 +55,14 @@ public class Contact {
 
     public void setFacebook(String facebook) {
         this.facebook = facebook;
+    }
+
+    public String getInstagram() {
+        return instagram;
+    }
+
+    public void setInstagram(String instagram) {
+        this.instagram = instagram;
     }
 
     public String getUrl() {
