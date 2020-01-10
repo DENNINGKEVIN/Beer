@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mulama.beer_superior">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,18 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BeerDetailActivity"></activity>
         <activity android:name=".ContributeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mulama.beer_superior.BeerActivity"></meta-data>
+                android:value="com.mulama.beer_superior.BeerActivity" />
         </activity>
         <activity android:name=".BeerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mulama.beer_superior.MainActivity">
-            </meta-data>
+                android:value="com.mulama.beer_superior.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:theme="@style/AppNoTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

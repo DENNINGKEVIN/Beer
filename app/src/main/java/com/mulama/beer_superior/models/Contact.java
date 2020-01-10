@@ -4,20 +4,24 @@ package com.mulama.beer_superior.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class Contact {
 
     @SerializedName("twitter")
     @Expose
-    private String twitter;
+     String twitter;
     @SerializedName("facebook")
     @Expose
-    private String facebook;
+     String facebook;
     @SerializedName("instagram")
     @Expose
-    private String instagram;
+     String instagram;
     @SerializedName("url")
     @Expose
-    private String url;
+     String url;
 
     /**
      * No args constructor for use in serialization

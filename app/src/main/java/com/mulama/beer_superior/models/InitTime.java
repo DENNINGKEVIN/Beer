@@ -4,14 +4,18 @@ package com.mulama.beer_superior.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class InitTime {
 
     @SerializedName("time")
     @Expose
-    private Integer time;
+     Integer time;
     @SerializedName("measure")
     @Expose
-    private String measure;
+     String measure;
 
     /**
      * No args constructor for use in serialization

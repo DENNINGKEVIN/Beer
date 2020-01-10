@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,6 +44,9 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
     BeerAdapter beerAdapter;
     @BindView(R.id.addBeerButton) Button mAddBeerButton;
 
+    private SharedPreferences mSharedPreferences;
+    private String mEnteredbeer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,10 +58,21 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
 
         mBeerTextView.setText("Here are the results for: " + name);
 
+        mAddBeerButton.setOnClickListener(this);
+
+        //adding shared preferences
+        mSharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+        mEnteredbeer=mSharedPreferences.getString(Constants.PREFERENCES_BEER_ENTER_KEY, null);
+        if (mEnteredbeer != null){
+            getBeer(mEnteredbeer);
+        }
+        Log.d("pref beer",mEnteredbeer);
+
+
+    }
+    public void getBeer(String beertext){
         UntappedApi client = UntappedClient.getClient();
-        Call<UntappedBeerSearchResponse> call = client.getBeerInfo(name);
-
-
+        Call<UntappedBeerSearchResponse> call = client.getBeerInfo(beertext);
         call.enqueue(new Callback<UntappedBeerSearchResponse>() {
             @Override
             public void onResponse(Call<UntappedBeerSearchResponse> call, Response<UntappedBeerSearchResponse> response) {
@@ -74,7 +90,7 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onFailure(Call<UntappedBeerSearchResponse> call, Throwable t) {
-t.printStackTrace();
+                t.printStackTrace();
             }
         });
     }
@@ -82,7 +98,9 @@ t.printStackTrace();
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(BeerActivity.this, ContributeActivity.class);
-        startActivity(intent);
+        if (v == mAddBeerButton) {
+            Intent intent = new Intent(BeerActivity.this, ContributeActivity.class);
+            startActivity(intent);
+        }
     }
 }

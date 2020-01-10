@@ -4,23 +4,27 @@ package com.mulama.beer_superior.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class Item {
 
     @SerializedName("checkin_count")
     @Expose
-    private Integer checkinCount;
+     Integer checkinCount;
     @SerializedName("have_had")
     @Expose
-    private Boolean haveHad;
+     Boolean haveHad;
     @SerializedName("your_count")
     @Expose
-    private Integer yourCount;
+     Integer yourCount;
     @SerializedName("beer")
     @Expose
-    private Beer beer;
+     Beer beer;
     @SerializedName("brewery")
     @Expose
-    private Brewery brewery;
+     Brewery brewery;
 
     /**
      * No args constructor for use in serialization

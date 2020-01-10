@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_centerInParent="false"
     android:layout_centerVertical="false"
-    android:background="@android:color/darker_gray"
+    android:background="@drawable/a3"
     tools:context=".ContributeActivity">
 
 

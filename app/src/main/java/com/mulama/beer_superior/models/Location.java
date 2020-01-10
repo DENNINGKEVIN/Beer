@@ -4,20 +4,24 @@ package com.mulama.beer_superior.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class Location {
 
     @SerializedName("brewery_city")
     @Expose
-    private String breweryCity;
+     String breweryCity;
     @SerializedName("brewery_state")
     @Expose
-    private String breweryState;
+     String breweryState;
     @SerializedName("lat")
     @Expose
-    private Double lat;
+     Double lat;
     @SerializedName("lng")
     @Expose
-    private Double lng;
+    Double lng;
 
     /**
      * No args constructor for use in serialization

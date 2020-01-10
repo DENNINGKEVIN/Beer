@@ -4,17 +4,21 @@ package com.mulama.beer_superior.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class Meta {
 
     @SerializedName("code")
     @Expose
-    private Integer code;
+     Integer code;
     @SerializedName("response_time")
     @Expose
-    private ResponseTime responseTime;
+     ResponseTime responseTime;
     @SerializedName("init_time")
     @Expose
-    private InitTime initTime;
+     InitTime initTime;
 
     /**
      * No args constructor for use in serialization

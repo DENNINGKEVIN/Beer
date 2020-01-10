@@ -4,44 +4,69 @@ package com.mulama.beer_superior.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class Beer {
 
     @SerializedName("bid")
     @Expose
-    private Integer bid;
+     Integer bid;
     @SerializedName("beer_name")
     @Expose
-    private String beerName;
+     String beerName;
     @SerializedName("beer_label")
     @Expose
-    private String beerLabel;
+     String beerLabel;
+    @SerializedName("beer_label_hd")
+    @Expose
+     String beerLabelHd;
     @SerializedName("beer_abv")
     @Expose
-    private double beerAbv;
-    @SerializedName("beer_slug")
-    @Expose
-    private String beerSlug;
+     Double beerAbv;
     @SerializedName("beer_ibu")
     @Expose
-    private Integer beerIbu;
+     Integer beerIbu;
     @SerializedName("beer_description")
     @Expose
-    private String beerDescription;
-    @SerializedName("created_at")
-    @Expose
-    private String createdAt;
+     String beerDescription;
     @SerializedName("beer_style")
     @Expose
-    private String beerStyle;
-    @SerializedName("in_production")
+     String beerStyle;
+    @SerializedName("is_in_production")
     @Expose
-    private Integer inProduction;
+     Integer isInProduction;
+    @SerializedName("beer_slug")
+    @Expose
+     String beerSlug;
+    @SerializedName("is_homebrew")
+    @Expose
+     Integer isHomebrew;
+    @SerializedName("created_at")
+    @Expose
+     String createdAt;
+    @SerializedName("rating_count")
+    @Expose
+     Integer ratingCount;
+    @SerializedName("rating_score")
+    @Expose
+     Double ratingScore;
+    @SerializedName("stats")
+    @Expose
+     Stats stats;
+    @SerializedName("brewery")
+    @Expose
+     Brewery brewery;
     @SerializedName("auth_rating")
     @Expose
-    private Integer authRating;
+     Integer authRating;
     @SerializedName("wish_list")
     @Expose
-    private Boolean wishList;
+     Boolean wishList;
+    @SerializedName("media")
+    @Expose
+     Media media;
 
     /**
      * No args constructor for use in serialization
@@ -52,33 +77,47 @@ public class Beer {
 
     /**
      * 
+     * @param beerLabelHd
      * @param authRating
+     * @param beerAbv
+     * @param beerLabel
+     * @param beerDescription
+     * @param isInProduction
+     * @param isHomebrew
+     * @param media
+     * @param beerIbu
+     * @param ratingCount
+     * @param beerStyle
+     * @param ratingScore
      * @param wishList
      * @param createdAt
      * @param beerSlug
-     * @param beerAbv
+     * @param stats
      * @param beerName
-     * @param beerLabel
-     * @param beerDescription
+     * @param brewery
      * @param bid
-     * @param beerIbu
-     * @param beerStyle
-     * @param inProduction
      */
-    public Beer(Integer bid, String beerName, String beerLabel, double beerAbv, String beerSlug, Integer beerIbu, String beerDescription, String createdAt, String beerStyle, Integer inProduction, Integer authRating, Boolean wishList) {
+    public Beer(Integer bid, String beerName, String beerLabel, String beerLabelHd, Double beerAbv, Integer beerIbu, String beerDescription, String beerStyle, Integer isInProduction, String beerSlug, Integer isHomebrew, String createdAt, Integer ratingCount, Double ratingScore, Stats stats, Brewery brewery, Integer authRating, Boolean wishList, Media media) {
         super();
         this.bid = bid;
         this.beerName = beerName;
         this.beerLabel = beerLabel;
+        this.beerLabelHd = beerLabelHd;
         this.beerAbv = beerAbv;
-        this.beerSlug = beerSlug;
         this.beerIbu = beerIbu;
         this.beerDescription = beerDescription;
-        this.createdAt = createdAt;
         this.beerStyle = beerStyle;
-        this.inProduction = inProduction;
+        this.isInProduction = isInProduction;
+        this.beerSlug = beerSlug;
+        this.isHomebrew = isHomebrew;
+        this.createdAt = createdAt;
+        this.ratingCount = ratingCount;
+        this.ratingScore = ratingScore;
+        this.stats = stats;
+        this.brewery = brewery;
         this.authRating = authRating;
         this.wishList = wishList;
+        this.media = media;
     }
 
     public Integer getBid() {
@@ -105,20 +144,20 @@ public class Beer {
         this.beerLabel = beerLabel;
     }
 
-    public double getBeerAbv() {
+    public String getBeerLabelHd() {
+        return beerLabelHd;
+    }
+
+    public void setBeerLabelHd(String beerLabelHd) {
+        this.beerLabelHd = beerLabelHd;
+    }
+
+    public Double getBeerAbv() {
         return beerAbv;
     }
 
-    public void setBeerAbv(double beerAbv) {
+    public void setBeerAbv(Double beerAbv) {
         this.beerAbv = beerAbv;
-    }
-
-    public String getBeerSlug() {
-        return beerSlug;
-    }
-
-    public void setBeerSlug(String beerSlug) {
-        this.beerSlug = beerSlug;
     }
 
     public Integer getBeerIbu() {
@@ -137,14 +176,6 @@ public class Beer {
         this.beerDescription = beerDescription;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
     public String getBeerStyle() {
         return beerStyle;
     }
@@ -153,12 +184,68 @@ public class Beer {
         this.beerStyle = beerStyle;
     }
 
-    public Integer getInProduction() {
-        return inProduction;
+    public Integer getIsInProduction() {
+        return isInProduction;
     }
 
-    public void setInProduction(Integer inProduction) {
-        this.inProduction = inProduction;
+    public void setIsInProduction(Integer isInProduction) {
+        this.isInProduction = isInProduction;
+    }
+
+    public String getBeerSlug() {
+        return beerSlug;
+    }
+
+    public void setBeerSlug(String beerSlug) {
+        this.beerSlug = beerSlug;
+    }
+
+    public Integer getIsHomebrew() {
+        return isHomebrew;
+    }
+
+    public void setIsHomebrew(Integer isHomebrew) {
+        this.isHomebrew = isHomebrew;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Integer getRatingCount() {
+        return ratingCount;
+    }
+
+    public void setRatingCount(Integer ratingCount) {
+        this.ratingCount = ratingCount;
+    }
+
+    public Double getRatingScore() {
+        return ratingScore;
+    }
+
+    public void setRatingScore(Double ratingScore) {
+        this.ratingScore = ratingScore;
+    }
+
+    public Stats getStats() {
+        return stats;
+    }
+
+    public void setStats(Stats stats) {
+        this.stats = stats;
+    }
+
+    public Brewery getBrewery() {
+        return brewery;
+    }
+
+    public void setBrewery(Brewery brewery) {
+        this.brewery = brewery;
     }
 
     public Integer getAuthRating() {
@@ -175,6 +262,14 @@ public class Beer {
 
     public void setWishList(Boolean wishList) {
         this.wishList = wishList;
+    }
+
+    public Media getMedia() {
+        return media;
+    }
+
+    public void setMedia(Media media) {
+        this.media = media;
     }
 
 }

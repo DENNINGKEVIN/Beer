@@ -4,44 +4,48 @@ package com.mulama.beer_superior.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
+
 public class Response {
 
     @SerializedName("message")
     @Expose
-    private String message;
+     String message;
     @SerializedName("time_taken")
     @Expose
-    private Double timeTaken;
+     Double timeTaken;
     @SerializedName("brewery_id")
     @Expose
-    private Integer breweryId;
+     Integer breweryId;
     @SerializedName("search_type")
     @Expose
-    private String searchType;
+     String searchType;
     @SerializedName("type_id")
     @Expose
-    private Integer typeId;
+     Integer typeId;
     @SerializedName("search_version")
     @Expose
-    private Integer searchVersion;
+     Integer searchVersion;
     @SerializedName("found")
     @Expose
-    private Integer found;
+     Integer found;
     @SerializedName("offset")
     @Expose
-    private Integer offset;
+     Integer offset;
     @SerializedName("limit")
     @Expose
-    private Integer limit;
+     Integer limit;
     @SerializedName("term")
     @Expose
-    private String term;
+     String term;
     @SerializedName("parsed_term")
     @Expose
-    private String parsedTerm;
+     String parsedTerm;
     @SerializedName("beers")
     @Expose
-    private Beers beers;
+     Beers beers;
 
     /**
      * No args constructor for use in serialization

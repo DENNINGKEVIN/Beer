@@ -8,8 +8,7 @@ import com.google.gson.annotations.SerializedName;
 import org.parceler.Parcel;
 
 @Parcel
-
-public class Beers {
+public class Media {
 
     @SerializedName("count")
     @Expose
@@ -22,7 +21,7 @@ public class Beers {
      * No args constructor for use in serialization
      * 
      */
-    public Beers() {
+    public Media() {
     }
 
     /**
@@ -30,7 +29,7 @@ public class Beers {
      * @param count
      * @param items
      */
-    public Beers(Integer count, List<Item> items) {
+    public Media(Integer count, List<Item> items) {
         super();
         this.count = count;
         this.items = items;
