@@ -16,6 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,32 +45,42 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
     BeerAdapter beerAdapter;
     @BindView(R.id.addBeerButton) Button mAddBeerButton;
 
-    private SharedPreferences mSharedPreferences;
-    private String mEnteredbeer;
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
+
+
+//    private SharedPreferences mSharedPreferences;
+//    private String mEnteredbeer;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beer);
         ButterKnife.bind(this);
-
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
 
-        mBeerTextView.setText("Here are the results for: " + name);
+        getBeer(name);
 
         mAddBeerButton.setOnClickListener(this);
 
         //adding shared preferences
-        mSharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
-        mEnteredbeer=mSharedPreferences.getString(Constants.PREFERENCES_BEER_ENTER_KEY, null);
-        if (mEnteredbeer != null){
-            getBeer(mEnteredbeer);
-        }
-        Log.d("pref beer",mEnteredbeer);
+//        mSharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+//        mEnteredbeer=mSharedPreferences.getString(Constants.PREFERENCES_BEER_ENTER_KEY, null);
+//        if (mEnteredbeer != null){
+//            getBeer(mEnteredbeer);
+//        }
+//        Log.d("pref beer",mEnteredbeer);
+        mBeerTextView.setText("Here are the results for: " + name);
 
 
     }
+    private void showUnsuccessfulMessage() {
+        mErrorTextView.setText("Something went wrong. Please try again later");
+        mErrorTextView.setVisibility(View.VISIBLE);
+    }
+
     public void getBeer(String beertext){
         UntappedApi client = UntappedClient.getClient();
         Call<UntappedBeerSearchResponse> call = client.getBeerInfo(beertext);
@@ -84,6 +95,8 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
                         beerRecyclerView.setAdapter(beerAdapter);
 
                     }
+                }else{
+                    showUnsuccessfulMessage();
                 }
                 Log.i(TAG, "onResponse: " + Integer.toString(response.code()));
             }
@@ -94,7 +107,6 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
     }
-
 
     @Override
     public void onClick(View v) {
