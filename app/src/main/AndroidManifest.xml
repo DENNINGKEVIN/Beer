@@ -18,7 +18,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".SavedBeersListActivity" />
+        <activity android:name=".SavedBeersListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mulama.beer_superior.BeerActivity"/>
+        </activity>
         <activity
             android:name=".NavigationDrawer"
             android:label="@string/title_activity_navigation_drawer"
