@@ -127,7 +127,7 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Restaurant"
+                android:text="Add To Favourites"
                 android:id="@+id/saveBeerButton"
                 android:layout_alignParentBottom="true"
                 android:background="@color/cardview_light_background"

@@ -11,7 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BeerDetailActivity"></activity>
+        <activity android:name=".LogInActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".SavedBeersListActivity" />
+        <activity
+            android:name=".NavigationDrawer"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BeerDetailActivity" />
         <activity android:name=".ContributeActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -20,16 +32,11 @@
         <activity android:name=".BeerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mulama.beer_superior.MainActivity"></meta-data>
+                android:value="com.mulama.beer_superior.MainActivity" />
         </activity>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppNoTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            >
         </activity>
     </application>
 

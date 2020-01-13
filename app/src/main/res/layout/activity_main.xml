@@ -25,17 +25,6 @@
         android:layout_centerHorizontal="true"
 
         />
-    <EditText
-        android:id="@+id/enterNameEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/viewBeersButton"
-        android:layout_centerInParent="true"
-        android:hint="Enter Name"
-        android:textColor="@color/colorPrimary"
-        android:textColorHint="@color/colorPrimary"
-        android:textSize="24sp"
-        app:fontFamily="cursive" />
 
     <TextView
         android:id="@+id/appNameTextView"
@@ -49,6 +38,8 @@
         android:textSize="40sp"
         android:textAlignment="center"
         app:fontFamily="monospace" />
+
+
 
 
 </RelativeLayout>

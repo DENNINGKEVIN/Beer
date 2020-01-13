@@ -68,6 +68,8 @@ public class Beer {
     @Expose
      Media media;
 
+    private String pushId;
+
     /**
      * No args constructor for use in serialization
      * 
@@ -119,6 +121,10 @@ public class Beer {
         this.wishList = wishList;
         this.media = media;
     }
+
+    public String getPushId() { return pushId; }
+
+    public void setPushId(String pushId) { this.pushId = pushId; }
 
     public Integer getBid() {
         return bid;

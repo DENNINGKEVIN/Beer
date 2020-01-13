@@ -15,11 +15,11 @@
     <!--        android:src="@drawable/beer4"-->
     <!--        android:scaleType="centerCrop" />-->
     <Button
-        android:id="@+id/addBeerButton"
+        android:id="@+id/favouritesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Add A New Beer" />
+        android:text="Favourite Beers" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,13 +30,9 @@
         android:layout_centerHorizontal="true"
         app:fontFamily="monospace"
         android:textAlignment="center"
-        android:layout_below="@id/addBeerButton"
+        android:layout_below="@id/favouritesButton"
         />
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
@@ -46,13 +42,7 @@
         android:layout_below="@+id/beerTextView"
       />
 
-    <TextView
-        android:id="@+id/errorTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="16dp"
-        android:visibility="gone" />
+
 
 
 

@@ -56,10 +56,8 @@ public class BeerAdapter extends RecyclerView.Adapter<BeerAdapter.BeerViewHolder
     }
 
     class BeerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        @BindView(R.id.pombeImage)
-        ImageView pombeImage;
-        @BindView(R.id.pombeText)
-        TextView pombeText;
+        @BindView(R.id.pombeImage) ImageView pombeImage;
+        @BindView(R.id.pombeText) TextView pombeText;
 
         private Context mContext;
 

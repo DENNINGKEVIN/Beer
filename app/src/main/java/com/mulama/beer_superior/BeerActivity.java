@@ -1,6 +1,7 @@
 package com.mulama.beer_superior;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,6 +11,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,6 +21,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,17 +44,16 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String TAG = "BeerActivity";
     @BindView(R.id.beerTextView) TextView mBeerTextView;
-    @BindView(R.id.beerRecyclerView)
-    RecyclerView beerRecyclerView;
+    @BindView(R.id.beerRecyclerView) RecyclerView beerRecyclerView;
     ArrayList<Beer> beerArrayList=new ArrayList<>();
     BeerAdapter beerAdapter;
-    @BindView(R.id.addBeerButton) Button mAddBeerButton;
-
-    @BindView(R.id.errorTextView) TextView mErrorTextView;
+    @BindView(R.id.favouritesButton) Button mFavouritesButton;
 
 
-//    private SharedPreferences mSharedPreferences;
-//    private String mEnteredbeer;
+
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+    private String mEnteredbeer;
 
 
 
@@ -63,23 +67,55 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
 
         getBeer(name);
 
-        mAddBeerButton.setOnClickListener(this);
+        mFavouritesButton.setOnClickListener(this);
 
-        //adding shared preferences
-//        mSharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
-//        mEnteredbeer=mSharedPreferences.getString(Constants.PREFERENCES_BEER_ENTER_KEY, null);
-//        if (mEnteredbeer != null){
-//            getBeer(mEnteredbeer);
-//        }
-//        Log.d("pref beer",mEnteredbeer);
+//        adding shared preferences
+        mSharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+        mEnteredbeer=mSharedPreferences.getString(Constants.PREFERENCES_BEER_ENTER_KEY, null);
+        if (mEnteredbeer != null){
+            getBeer(mEnteredbeer);
+        }
+        Log.d("pref beer",mEnteredbeer);
+
         mBeerTextView.setText("Here are the results for: " + name);
+    }
+    private void addToSharedPreferences(String beer) {
+        mEditor.putString(Constants.PREFERENCES_BEER_ENTER_KEY, beer).apply();
+    }
+
+    //adding searchview
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_search, menu);
+        ButterKnife.bind(this);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+        MenuItem menuItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                addToSharedPreferences(query);
+                getBeer(query);
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+    }
 
 
-    }
-    private void showUnsuccessfulMessage() {
-        mErrorTextView.setText("Something went wrong. Please try again later");
-        mErrorTextView.setVisibility(View.VISIBLE);
-    }
+
 
     public void getBeer(String beertext){
         UntappedApi client = UntappedClient.getClient();
@@ -95,8 +131,6 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
                         beerRecyclerView.setAdapter(beerAdapter);
 
                     }
-                }else{
-                    showUnsuccessfulMessage();
                 }
                 Log.i(TAG, "onResponse: " + Integer.toString(response.code()));
             }
@@ -110,8 +144,8 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v == mAddBeerButton) {
-            Intent intent = new Intent(BeerActivity.this, ContributeActivity.class);
+        if (v == mFavouritesButton) {
+            Intent intent = new Intent(BeerActivity.this, SavedBeersListActivity.class);
             startActivity(intent);
         }
     }
