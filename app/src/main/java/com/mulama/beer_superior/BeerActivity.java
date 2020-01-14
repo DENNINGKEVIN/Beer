@@ -51,6 +51,7 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
     private String mEnteredbeer;
@@ -75,7 +76,7 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
         if (mEnteredbeer != null){
             getBeer(mEnteredbeer);
         }
-        Log.d("pref beer",mEnteredbeer);
+//        Log.d("pref beer",mEnteredbeer);
 
         mBeerTextView.setText("Here are the results for: " + name);
     }
@@ -150,3 +151,6 @@ public class BeerActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+
+
+

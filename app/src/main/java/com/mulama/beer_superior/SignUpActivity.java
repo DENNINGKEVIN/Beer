@@ -125,6 +125,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         } else {
                             Toast.makeText(SignUpActivity.this, "Failed...incorrect credentials",
                                     Toast.LENGTH_SHORT).show();
+                            mAuthProgressDialog.hide();
                         }
                     }
                 });

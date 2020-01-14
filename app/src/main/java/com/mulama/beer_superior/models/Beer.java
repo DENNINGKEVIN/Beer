@@ -68,7 +68,7 @@ public class Beer {
     @Expose
      Media media;
 
-    private String pushId;
+     String pushId;
 
     /**
      * No args constructor for use in serialization
