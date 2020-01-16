@@ -31,6 +31,7 @@ public class FireBaseBeerViewHolder extends RecyclerView.ViewHolder implements V
 
     View mView;
     Context mContext;
+    public ImageView mBeerImageView;
 
 
     public FireBaseBeerViewHolder(View itemView) {
@@ -41,10 +42,13 @@ public class FireBaseBeerViewHolder extends RecyclerView.ViewHolder implements V
     }
 
     public void bindBeer(Beer beer) {
+        mBeerImageView = (ImageView) mView.findViewById(R.id.pombeImage);
         ImageView pombeimage=(ImageView) mView.findViewById(R.id.pombeImage);
         TextView pombetext=(TextView) mView.findViewById(R.id.pombeText);
 
         Picasso.get().load(beer.getBeerLabel()).into(pombeimage);
+        Picasso.get().load(beer.getBeerLabel()).into(mBeerImageView);
+
         pombetext.setText(beer.getBeerName());
 
     }

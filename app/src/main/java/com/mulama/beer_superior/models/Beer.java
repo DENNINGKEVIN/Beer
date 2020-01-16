@@ -70,6 +70,8 @@ public class Beer {
 
      String pushId;
 
+     String index;
+
     /**
      * No args constructor for use in serialization
      * 
@@ -120,11 +122,21 @@ public class Beer {
         this.authRating = authRating;
         this.wishList = wishList;
         this.media = media;
+        this.index = "not_specified";
     }
 
-    public String getPushId() { return pushId; }
+    public String getIndex() {
+        return index;
+    }
 
-    public void setPushId(String pushId) { this.pushId = pushId; }
+    public void setIndex(String index) {
+        this.index = index;
+    }
+    public String getPushId() {
+        return pushId; }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId; }
 
     public Integer getBid() {
         return bid;

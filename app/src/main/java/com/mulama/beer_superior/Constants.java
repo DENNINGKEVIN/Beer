@@ -5,4 +5,5 @@ public class Constants {
     public static final String PREFERENCES_BEER_ENTER_KEY="beerenter";
     public static final String FIREBASE_CHILD_SEARCHED_BEER="searchedbeer";
     public static final String FIREBASE_CHILD_BEERS="beers";
+    public static final String FIREBASE_QUERY_INDEX = "index";
 }
