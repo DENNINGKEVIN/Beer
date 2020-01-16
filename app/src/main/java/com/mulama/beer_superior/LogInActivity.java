@@ -66,7 +66,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         mAuthProgressDialog = new ProgressDialog(this);
         mAuthProgressDialog.setTitle("Loading...");
         mAuthProgressDialog.setMessage("Authenticating with Firebase...");
-        mAuthProgressDialog.setCancelable(false);
+        mAuthProgressDialog.setCancelable(true);
     }
     private void loginWithPassword() {
         String email = mEmail.getText().toString().trim();
@@ -90,6 +90,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                             Log.w(TAG, "signInWithEmail", task.getException());
                             Toast.makeText(LogInActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });

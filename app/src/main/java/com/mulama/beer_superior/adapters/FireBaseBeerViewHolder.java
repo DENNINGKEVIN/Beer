@@ -32,6 +32,7 @@ public class FireBaseBeerViewHolder extends RecyclerView.ViewHolder implements V
     View mView;
     Context mContext;
 
+
     public FireBaseBeerViewHolder(View itemView) {
         super(itemView);
         mView = itemView;

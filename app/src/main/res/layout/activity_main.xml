@@ -13,18 +13,26 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/imageView"
-            android:src="@drawable/beer1"
+            android:src="@drawable/cheer"
             android:scaleType="centerCrop" />
 
     <Button
+        android:id="@+id/viewBeersButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/viewBeersButton"
+        android:layout_marginTop="3dp"
+        android:background="@color/cardview_dark_background"
+        android:padding="3dp"
         android:text="View Beers"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:textColor="#009688"
+        android:textSize="19sp"
+        android:fontFamily="monospace"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="bold" />
 
-        />
 
     <TextView
         android:id="@+id/appNameTextView"
@@ -33,8 +41,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="80dp"
+        android:layout_marginTop="40dp"
         android:text="Welcome To Beer Superior"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#009688"
         android:textSize="40sp"
         android:textAlignment="center"
         app:fontFamily="monospace" />

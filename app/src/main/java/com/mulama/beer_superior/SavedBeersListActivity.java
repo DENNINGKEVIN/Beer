@@ -2,6 +2,8 @@ package com.mulama.beer_superior;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,8 +27,12 @@ import butterknife.ButterKnife;
 public class SavedBeersListActivity extends AppCompatActivity {
     private DatabaseReference mBeerReference;
     private FirebaseRecyclerAdapter<Beer, FireBaseBeerViewHolder> mFirebaseAdapter;
+//    private FirebaseBeerItemAdapter mFirebaseBeerItemAdapter;
+    private ItemTouchHelper mItemTouchHelper;
 
-    @BindView(R.id.beerRecyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.favouriteBeerRecyclerView) RecyclerView mRecyclerView;
+
+
 
 
     @Override
@@ -34,8 +40,9 @@ public class SavedBeersListActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_beer);
+        setContentView(R.layout.activity_saved_beers);
         ButterKnife.bind(this);
+
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
@@ -45,10 +52,15 @@ public class SavedBeersListActivity extends AppCompatActivity {
                 .getReference(Constants.FIREBASE_CHILD_BEERS)
                 .child(uid);
 
+
         setUpFirebaseAdapter();
     }
 
-    private void setUpFirebaseAdapter(){
+
+    private void setUpFirebaseAdapter() {
+
+
+
         FirebaseRecyclerOptions<Beer> options =
                 new FirebaseRecyclerOptions.Builder<Beer>()
                         .setQuery(mBeerReference, Beer.class)
@@ -63,13 +75,15 @@ public class SavedBeersListActivity extends AppCompatActivity {
             @NonNull
             @Override
             public FireBaseBeerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pombe_item, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.pombe_item_drag, parent, false);
                 return new FireBaseBeerViewHolder(view);
+
             }
         };
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(SavedBeersListActivity.this, 3));
         mRecyclerView.setAdapter(mFirebaseAdapter);
+
     }
 
     @Override
@@ -84,5 +98,8 @@ public class SavedBeersListActivity extends AppCompatActivity {
         if(mFirebaseAdapter!= null) {
             mFirebaseAdapter.stopListening();
         }
+    }
+    public void onStartDrag(RecyclerView.ViewHolder viewHolder){
+        mItemTouchHelper.startDrag(viewHolder);
     }
 }
