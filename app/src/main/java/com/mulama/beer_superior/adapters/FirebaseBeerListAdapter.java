@@ -1,6 +1,7 @@
 package com.mulama.beer_superior.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,10 +16,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Query;
+import com.mulama.beer_superior.BeerDetailActivity;
 import com.mulama.beer_superior.R;
 import com.mulama.beer_superior.models.Beer;
 import com.mulama.beer_superior.util.ItemTouchHelperAdapter;
 import com.mulama.beer_superior.util.OnStartDragListener;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -91,7 +95,19 @@ public class FirebaseBeerListAdapter extends FirebaseRecyclerAdapter<Beer, FireB
                 return false;
             }
         });
+
+        fireBaseBeerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, BeerDetailActivity.class);
+                intent.putExtra("position", fireBaseBeerViewHolder.getAdapterPosition());
+                intent.putExtra("beers", Parcels.wrap(mBeer));
+                mContext.startActivity(intent);
+            }
+        });
     }
+
 
 
 
