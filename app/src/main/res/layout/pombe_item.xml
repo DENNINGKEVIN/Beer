@@ -28,10 +28,12 @@
 
         <TextView
             android:id="@+id/pombeText"
+            android:textAlignment="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Barley"
             android:layout_margin="4dp"
+            android:fontFamily="@font/delius_swash_caps"
+            android:text="Barley"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/pombeImage"

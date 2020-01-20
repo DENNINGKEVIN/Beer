@@ -45,8 +45,9 @@
         android:text="Welcome To Beer Superior"
         android:textColor="#009688"
         android:textSize="40sp"
+        android:fontFamily="@font/delius_swash_caps"
         android:textAlignment="center"
-        app:fontFamily="monospace" />
+      />
 
 
 

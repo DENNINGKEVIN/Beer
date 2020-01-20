@@ -2,12 +2,12 @@ package com.mulama.beer_superior;
 
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +18,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mulama.beer_superior.models.*;
-import com.mulama.beer_superior.models.Brewery;
-import com.mulama.beer_superior.models.Contact;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -30,9 +28,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static android.content.ContentValues.TAG;
-
-public class BeerDetailFragment extends Fragment implements View.OnClickListener{
+public class BeerDetailFragment extends Fragment implements View.OnClickListener {
    @BindView(R.id.beerImageView) ImageView mBeerImage;
     @BindView(R.id.beerNameTextView) TextView mBeername;
     @BindView(R.id.beerSlugTextView) TextView mBeerSlug;
@@ -42,7 +38,10 @@ public class BeerDetailFragment extends Fragment implements View.OnClickListener
     @BindView(R.id.descriptionTextView) TextView mDescription;
     @BindView(R.id.saveBeerButton) Button mSaveBeer;
 
+
     private Beer mBeer;
+    private List<Beer> mBeers;
+    private int mPosition;
 
 
     public BeerDetailFragment(){
@@ -60,7 +59,9 @@ public class BeerDetailFragment extends Fragment implements View.OnClickListener
  @Override
  public void onCreate(Bundle savedInstanceState) {
   super.onCreate(savedInstanceState);
-  mBeer = Parcels.unwrap(getArguments().getParcelable("beer"));
+  mBeers = Parcels.unwrap(getArguments().getParcelable(Constants.EXTRA_KEY_BEERS));
+  mPosition=getArguments().getInt(Constants.EXTRA_KEY_POSITION);
+  mBeer=mBeers.get(mPosition);
  }
 
  @Override
@@ -77,7 +78,9 @@ public class BeerDetailFragment extends Fragment implements View.OnClickListener
   mBid.setText(mBeer.getBid().toString());
 
   mSaveBeer.setOnClickListener(this);
+
   return view;
+
  }
 
  @Override
@@ -97,5 +100,15 @@ public class BeerDetailFragment extends Fragment implements View.OnClickListener
    pushRef.setValue(mBeer);
    Toast.makeText(getContext(),"Added to Favourites", Toast.LENGTH_SHORT).show();
   }
+ }
+ public static BeerDetailFragment newInstance(List<Beer> beers, int position) {
+  BeerDetailFragment beerDetailFragment = new BeerDetailFragment();
+  Bundle args = new Bundle();
+
+  args.putParcelable(Constants.EXTRA_KEY_BEERS, Parcels.wrap(beers));
+  args.putInt(Constants.EXTRA_KEY_POSITION, position);
+
+  beerDetailFragment.setArguments(args);
+  return beerDetailFragment;
  }
 }

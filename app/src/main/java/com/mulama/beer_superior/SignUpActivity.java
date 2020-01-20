@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,8 +30,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     @BindView(R.id.emailEditText) EditText mEmailEditText;
     @BindView(R.id.passwordEditText) EditText mPasswordEditText;
     @BindView(R.id.confirmPasswordEditText) EditText mConfirmPasswordEditText;
-    @BindView(R.id.loginTextView)
-    TextView mLoginTextView;
+    @BindView(R.id.loginTextView) TextView mLoginTextView;
+    @BindView(R.id.spin_kit) ProgressBar progressBar;
 
     private FirebaseAuth mAuth;
     public static final String TAG = SignUpActivity.class.getSimpleName();

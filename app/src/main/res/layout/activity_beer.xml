@@ -8,40 +8,50 @@
     android:background="@color/common_google_signin_btn_text_light_disabled"
     >
 
-    <!--    <ImageView-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:id="@+id/imageView"-->
-    <!--        android:src="@drawable/beer4"-->
-    <!--        android:scaleType="centerCrop" />-->
-    <Button
-        android:id="@+id/favouritesButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Favourite Beers" />
+<!--    &lt;!&ndash;    <ImageView&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:layout_height="match_parent"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:id="@+id/imageView"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:src="@drawable/beer4"&ndash;&gt;-->
+<!--    &lt;!&ndash;        android:scaleType="centerCrop" />&ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/favouritesButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:text="Favourite Beers" />-->
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/beerTextView"
-        android:text="Here are the beers"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"
-        app:fontFamily="monospace"
-        android:textAlignment="center"
-        android:layout_below="@id/favouritesButton"
-        />
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/beerTextView"-->
+<!--        android:text="Here are the beers"-->
+<!--        android:textSize="20sp"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        app:fontFamily="monospace"-->
+<!--        android:textAlignment="center"-->
+<!--        android:layout_below="@id/favouritesButton"-->
+<!--        />-->
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/beerRecyclerView"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/beerTextView"
-      />
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/beerRecyclerView"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:layout_below="@+id/beerTextView"-->
+<!--      />-->
+
+
+<fragment
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:name="com.mulama.beer_superior.BeerListFragment"
+    android:id="@+id/fragmentBeerList"
+    tools:layout="@layout/fragment_beer_list"
+    android:layout_centerHorizontal="true"/>
+
 
 
 

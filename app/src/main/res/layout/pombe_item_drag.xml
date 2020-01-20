@@ -32,6 +32,7 @@
             android:layout_height="wrap_content"
             android:text="Barley"
             android:layout_margin="4dp"
+            android:fontFamily="@font/delius_swash_caps"
             android:textColor="@android:color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/pombeImage"

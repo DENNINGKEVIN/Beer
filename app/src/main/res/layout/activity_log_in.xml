@@ -29,6 +29,7 @@
             android:inputType="textEmailAddress"
             android:padding="10dp"
             android:singleLine="true"
+            android:fontFamily="@font/delius_swash_caps"
             android:textColor="@android:color/black"
             android:textColorHint="@android:color/black"
             android:textSize="16sp" />
@@ -42,6 +43,7 @@
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:hint="Password"
+            android:fontFamily="@font/delius_swash_caps"
             android:inputType="textPassword"
             android:padding="10dp"
             android:singleLine="true"
@@ -68,10 +70,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
-            android:fontFamily="monospace"
+            android:fontFamily="@font/delius_swash_caps"
             android:text="Don't have an account? Sign up here!"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -86,14 +88,23 @@
 
     <TextView
         android:id="@+id/title"
+        android:fontFamily="@font/delius_swash_caps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearLayout"
         android:layout_centerHorizontal="true"
-        android:fontFamily="monospace"
         android:text="Login"
         android:textColor="@android:color/darker_gray"
         android:textSize="30dp"
         android:textStyle="bold" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/spin_kit1"
+        style="@style/SpinKitView.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="#009688" />
 
 </RelativeLayout>

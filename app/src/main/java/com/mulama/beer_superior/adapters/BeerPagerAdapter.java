@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.mulama.beer_superior.BeerDetailFragment;
 import com.mulama.beer_superior.models.Beer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class BeerPagerAdapter extends FragmentPagerAdapter {
@@ -19,7 +20,7 @@ public class BeerPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return BeerDetailFragment.newInstance(mBeers.get(position));
+        return BeerDetailFragment.newInstance( mBeers,position);
     }
 
     @Override

@@ -6,4 +6,15 @@ public class Constants {
     public static final String FIREBASE_CHILD_SEARCHED_BEER="searchedbeer";
     public static final String FIREBASE_CHILD_BEERS="beers";
     public static final String FIREBASE_QUERY_INDEX = "index";
+    public static final String EXTRA_KEY_POSITION = "position";
+    public static final String EXTRA_KEY_BEERS = "beers";
+
+    //intent extra pair
+    public static final String KEY_SOURCE = "source";
+
+    //saved beer
+    public static final String SOURCE_SAVED = "saved";
+
+    //when finding beer to save
+    public static final String SOURCE_FIND = "find";
 }
